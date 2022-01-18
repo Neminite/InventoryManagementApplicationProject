@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="550.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lhaunsp.wguproject.InventoryManagementController">
+   <children>
+      <Text fx:id="lblAddModifyPart" layoutX="28.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$$Menu Name$$">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <RadioButton fx:id="rbtnPartInHouse" layoutX="172.0" layoutY="30.0" mnemonicParsing="false" onAction="#rbtnPartInHouseSelected" selected="true" text="In-House">
+         <toggleGroup>
+            <ToggleGroup fx:id="partTypeGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rbtnPartOutsourced" layoutX="309.0" layoutY="30.0" mnemonicParsing="false" onAction="#rbtnPartOutsourcedSelected" prefHeight="17.0" prefWidth="163.0" text="Outsourced" toggleGroup="$partTypeGroup" />
+      <AnchorPane layoutX="46.0" layoutY="65.0" prefHeight="229.0" prefWidth="508.0">
+         <children>
+            <Text layoutX="18.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" AnchorPane.leftAnchor="16.0" />
+            <TextField fx:id="txtFldPartID" editable="false" layoutX="128.0" layoutY="30.0" opacity="0.5" text="Auto Gen- Disabled" AnchorPane.leftAnchor="125.0">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </TextField>
+            <Text layoutX="16.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" AnchorPane.leftAnchor="16.0" />
+            <TextField fx:id="txtFldPartName" layoutX="125.0" layoutY="71.0" AnchorPane.leftAnchor="125.0" />
+            <Text layoutX="20.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inv" AnchorPane.leftAnchor="16.0" />
+            <TextField fx:id="txtFldPartInv" layoutX="125.0" layoutY="101.0" AnchorPane.leftAnchor="125.0" />
+            <Text layoutX="15.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price / Cost" AnchorPane.leftAnchor="15.0" />
+            <TextField fx:id="txtFldPartPrice" layoutX="125.0" layoutY="131.0" AnchorPane.leftAnchor="125.0" />
+            <Text layoutX="16.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max" AnchorPane.leftAnchor="16.0" />
+            <TextField fx:id="txtFldPartMax" layoutX="125.0" layoutY="161.0" AnchorPane.leftAnchor="125.0" />
+            <Text layoutX="300.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Min" />
+            <TextField fx:id="txtFldPartMin" layoutX="345.0" layoutY="161.0" />
+            <Text fx:id="lblPartMIDCoName" layoutX="16.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Machine ID" AnchorPane.leftAnchor="16.0" />
+            <TextField fx:id="txtFldPartMIDCoName" layoutX="125.0" layoutY="191.0" AnchorPane.leftAnchor="125.0" />
+         </children>
+      </AnchorPane>
+      <Button layoutX="332.0" layoutY="329.0" mnemonicParsing="false" onAction="#btnPartSaveClicked" text="Save" />
+      <Button layoutX="391.0" layoutY="329.0" mnemonicParsing="false" onAction="#btnPartCancelClicked" text="Cancel" />
+      <Label fx:id="lblPartError" alignment="TOP_LEFT" layoutX="46.0" layoutY="329.0" prefHeight="172.0" prefWidth="238.0" textFill="RED" wrapText="true" />
+   </children>
+</AnchorPane>
